@@ -1,0 +1,327 @@
+@import url('./styles/reset.css');
+@import url('./styles/token.css');
+@import url('./styles/globals.css');
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 3rem 2rem;
+    overflow: hidden;
+}
+
+/* Faixas decorativas com animação */
+.hero .absolute-ranges {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero .range {
+    position: absolute;
+    opacity: 0.15;
+}
+
+.hero .range img {
+    width: 100%;
+    height: auto;
+}
+
+.hero .range1 {
+    top: 8%;
+    left: -15%;
+    width: 45%;
+    transform: rotate(-12deg);
+    animation: floatRange1 12s ease-in-out infinite;
+}
+
+.hero .range2 {
+    top: 25%;
+    right: -10%;
+    width: 38%;
+    transform: rotate(18deg);
+    animation: floatRange2 14s ease-in-out infinite;
+}
+
+.hero .range3 {
+    bottom: 22%;
+    left: -12%;
+    width: 42%;
+    transform: rotate(-15deg);
+    animation: floatRange3 13s ease-in-out infinite;
+}
+
+.hero .range4 {
+    bottom: 8%;
+    right: -8%;
+    width: 35%;
+    transform: rotate(22deg);
+    animation: floatRange4 15s ease-in-out infinite;
+}
+
+/* Banner com animação */
+.hero .banner {
+    position: relative;
+    z-index: 2;
+    width: 400px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.2));
+    animation: floatBanner 4s ease-in-out infinite;
+}
+
+/* Título */
+.hero .title {
+    position: relative;
+    z-index: 2;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.3;
+}
+
+/* Botão CTA */
+.hero .cta-button {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+    animation: gentlePulse 2s ease-in-out infinite;
+}
+
+.hero .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(255, 215, 0, 0.6);
+}
+
+/* ========================================
+   VIDEO SECTION
+   ======================================== */
+.video-section {
+    position: relative;
+    min-height: 60vh;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 5rem 2rem;
+}
+
+.video-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.4;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    background: #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Placeholder do vídeo */
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.video-placeholder svg {
+    opacity: 0.3;
+}
+
+.video-placeholder p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes floatBanner {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) rotate(2deg) scale(1.02);
+    }
+}
+
+@keyframes floatRange1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-12deg);
+    }
+    50% {
+        transform: translate(8px, -10px) rotate(-12.3deg);
+    }
+}
+
+@keyframes floatRange2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(18deg);
+    }
+    50% {
+        transform: translate(-10px, 12px) rotate(18.5deg);
+    }
+}
+
+@keyframes floatRange3 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-15deg);
+    }
+    50% {
+        transform: translate(12px, 8px) rotate(-14.5deg);
+    }
+}
+
+@keyframes floatRange4 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(22deg);
+    }
+    50% {
+        transform: translate(-8px, -12px) rotate(22.5deg);
+    }
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 32px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+@media (max-width: 1024px) {
+    .hero {
+        gap: 28px;
+    }
+
+    .hero .banner {
+        width: 350px;
+    }
+
+    .hero .title {
+        font-size: 32px;
+    }
+
+    .hero .cta-button {
+        font-size: 18px;
+        padding: 14px 40px;
+    }
+
+    .video-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        gap: 24px;
+        padding: 2rem 1.5rem;
+    }
+
+    .hero .banner {
+        width: 280px;
+    }
+
+    .hero .title {
+        font-size: 28px;
+        max-width: 90%;
+    }
+
+    .hero .cta-button {
+        font-size: 16px;
+        padding: 12px 32px;
+    }
+
+    .video-section {
+        padding: 4rem 1.5rem;
+        gap: 32px;
+    }
+
+    .video-title {
+        font-size: 24px;
+        max-width: 90%;
+    }
+
+    .video-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        gap: 20px;
+        padding: 1.5rem 1rem;
+    }
+
+    .hero .banner {
+        width: 220px;
+    }
+
+    .hero .title {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .hero .cta-button {
+        font-size: 15px;
+        padding: 12px 28px;
+    }
+
+    .video-section {
+        padding: 3rem 1rem;
+    }
+
+    .video-title {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .video-placeholder p {
+        font-size: 16px;
+    }
+}

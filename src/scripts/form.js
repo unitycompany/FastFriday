@@ -383,13 +383,8 @@ class FormManager {
         this.submitButton.disabled = false;
 
         if (result.success) {
-            alert('Cadastro realizado com sucesso! Você será redirecionado para o grupo do WhatsApp.');
-            // Aqui você pode redirecionar para o grupo do WhatsApp ou outra página
-            // window.location.href = 'https://chat.whatsapp.com/seu-link-aqui';
-            
-            // Limpa o formulário
-            this.form.reset();
-            this.inputs.tel.value = '+55 ';
+            // Redireciona para a página de acesso ao grupo
+            window.location.href = 'redirect.html';
         } else {
             alert('Erro ao enviar o formulário. Por favor, tente novamente.');
         }
